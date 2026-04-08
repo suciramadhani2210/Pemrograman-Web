@@ -1,0 +1,16 @@
+.bg-green {
+  background-color: green;
+}
+/* ID SELECTOR */
+.bg-blue {
+  background-color: blue;
+}
+
+.text-red {
+  color: red;
+}
+
+spacer {
+  margin: 20px;
+  padding: 20px;
+}

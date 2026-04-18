@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter App</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center p-4">
+  <div class="bg-white/15 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl p-8 w-full max-w-md text-white text-center">
+    <h1 class="text-4xl font-bold mb-2">Counter App</h1>
+    <small class="block mb-6 text-white/80">Oleh Cici</small>
+
+    <p id="message" class="mb-4 text-lg font-medium">Ayo mulai!</p>
+    <p id="nomor" class="text-7xl font-extrabold mb-8">0</p>
+
+    <div class="flex gap-4 justify-center">
+      <button id="btnKurang" class="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-xl font-semibold transition">
+        Kurang
+      </button>
+      <button id="btnTambah" class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-xl font-semibold transition">
+        Tambah
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let number = document.getElementById("nomor");
+    let message = document.getElementById("message");
+    let count = 0;
+
+    number.innerText = count;
+
+    function updateMessage() {
+      if (count < 0) {
+        message.innerText = "Angkanya minus";
+      } else if (count === 0) {
+        message.innerText = "Balik ke nol";
+      } else if (count < 10) {
+        message.innerText = "Mantap, lanjut!";
+      } else {
+        message.innerText = "Wah sudah tinggi banget nih!";
+      }
+    }
+
+    function tambah() {
+      count++;
+      number.innerText = count;
+      updateMessage();
+    }
+
+    function kurang() {
+      count--;
+      number.innerText = count;
+      updateMessage();
+    }
+
+    document.getElementById("btnTambah").addEventListener("click", tambah);
+    document.getElementById("btnKurang").addEventListener("click", kurang);
+  </script>
+</body>
+</html>
